@@ -5,13 +5,18 @@ const { Server } = require("socket.io");
 const ACTIONS = require("./Actions");
 
 const app = express();
-app.use(cors()); // Enable CORS for all origins
+app.use(cors());
+
+// Add this line to handle GET /
+app.get("/", (req, res) => {
+  res.send("WebSocket server is running 🚀");
+});
 
 const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "*", // Or specify Vercel frontend URL for stricter security
+    origin: "*",
     methods: ["GET", "POST"],
   },
 });
