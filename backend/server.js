@@ -7,7 +7,6 @@ const ACTIONS = require("./Actions");
 const app = express();
 app.use(cors());
 
-// Add this line to handle GET /
 app.get("/", (req, res) => {
   res.send("WebSocket server is running 🚀");
 });
