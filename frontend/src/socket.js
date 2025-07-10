@@ -8,6 +8,8 @@ export const initSocket = async () => {
         forceNew: true, 
         reconnection: true, 
         reconnectionAttempts: Infinity,
+        reconnectionDelay: 15000, 
+        reconnectionDelayMax: 30000,        
         timeout: 10000,
         transports: ['websocket'],
     };
